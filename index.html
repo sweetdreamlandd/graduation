@@ -1,177 +1,474 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MẪN ĐỨC LUXURY – Watch • Jewelry</title>
-    <meta name="description"
-        content="Chuyên đồng hồ & trang sức luxury. Tư vấn nhanh – Giá trị tinh tế – Bảo hành toàn quốc." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Famous Graffiti</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#ffffff;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+background:#1d86d3;
+padding:4rem 0 3rem 0;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:2rem;
+}
+
+.hero-text h1{
+font-size:5rem;
+color:white;
+font-weight:900;
+letter-spacing:0.2rem;
+}
+
+.hero-text h2{
+font-size:4rem;
+font-weight:900;
+color:transparent;
+-webkit-text-stroke:2px white;
+}
+
+.subtitle{
+margin-top:1rem;
+font-size:0.8rem;
+color:white;
+letter-spacing:0.2rem;
+}
+
+.hero-image{
+width:320px;
+}
+
+.hero-image img{
+width:100%;
+display:block;
+}
+
+/* ICON ROW */
+
+.icon-row{
+margin-top:2rem;
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.icon{
+width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;          /* bắt buộc để cắt ảnh */
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.icon img{
+width:100%;
+  height:100%;
+  object-fit:cover; 
+}
+
+/* DARK SECTION */
+
+.graffiti{
+background:#0d0d0d;
+padding:3rem 0 4rem 0;
+color:white;
+}
+
+/* TOP BAR */
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:0.8rem;
+margin-bottom:2rem;
+}
+
+/* CARD GRID */
+
+.card-grid{
+display:flex;
+gap:3rem;
+justify-content:center;
+}
+
+/* CARD */
+
+.card{
+width:220px;
+background:white;
+border-radius:1rem;
+padding:1rem;
+text-align:center;
+color:black;
+}
+
+.card img{
+width:100%;
+margin-bottom:1rem;
+}
+
+.card h3{
+font-size:1rem;
+font-weight:800;
+letter-spacing:0.15rem;
+}
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+.invite-form{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+margin-top:20px;
+}
+
+/* INPUT */
+
+#nameInput{
+
+padding:10px 12px;
+font-size:15px;
+border-radius:8px;
+border:2px solid #e0e0e0;
+outline:none;
+transition:0.3s;
+}
+
+#nameInput:focus{
+border-color:#1d86d3;
+box-shadow:0 0 6px rgba(29,134,211,0.4);
+}
+
+/* BUTTON */
+
+.invite-form button{
+padding:10px 20px;
+font-size:15px;
+border:none;
+border-radius:8px;
+background:#1d86d3;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.invite-form button:hover{
+background:#166bb0;
+transform:translateY(-2px);
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.popup-content{
+background:white;
+padding:2rem;
+border-radius:12px;
+width:400px;
+text-align:center;
+position:relative;
+}
+
+.close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:25px;
+cursor:pointer;
+}
+/* FOOTER NOTE */
+
+.footer-note{
+text-align:center;
+margin-top:2rem;
+font-size:0.7rem;
+color:#777;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+/* TABLET */
+
+@media (max-width: 1024px){
+
+.hero-text h1{
+font-size:4rem;
+}
+
+.hero-text h2{
+font-size:3rem;
+}
+
+.hero-image{
+width:260px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image{
+width:220px;
+}
+
+.icon-row{
+justify-content:center;
+}
+
+.card-grid{
+flex-direction:column;
+align-items:center;
+gap:2rem;
+}
+
+.top-bar{
+flex-direction:column;
+gap:0.5rem;
+text-align:center;
+}
+
+}
+
+</style>
 </head>
 
 <body>
-    <div class="page-bg" aria-hidden="true">
-        <!-- Bạn sẽ thay ảnh nền thực tế sau: -->
-        <img class="bg-img" src="ảnh background.jpg" alt="">
-        <div class="bg-overlay"></div>
-        <div class="bg-gloss"></div>
-    </div>
 
-    <main class="container">
+<header>
 
-        <!-- Glass plaque / Logo block -->
-        <header class="hero-card">
+<div class="container">
 
-            <div class="rim">
-                <div class="panel">
-                    <h1>MẪN ĐỨC LUXURY<br>WATCH - JEWELRY</h1>
-                    <p class="desc">Chuyên Đồng Hồ ⌚ &amp; Trang Sức Luxury 💎</p>
-                    <p class="zalo">ZALO tư vấn: 0856.926.555</p>
-                </div>
-            </div>
+<div class="hero">
 
-        </header>
+<div class="hero-text">
+
+<div class="subtitle">
+JOIN US TO CELEBRATE A PROUD ACHIEVEMENT
+</div>
+
+<h1>UNIVERSITY</h1>
+<h2>GRADUATION</h2>
+
+</div>
+
+<div class="hero-image">
+<img src="/assests/img/img_07.png" alt="hình nhân vật chính">
+<!-- hình nhân vật chính -->
+</div>
+
+</div>
+
+<div class="icon-row">
+
+<div class="icon">
+<img src="/assests/img/img_01.jfif">
+<!-- icon 1 -->
+</div>
+
+<div class="icon">
+<img src="/assests/img/img_02.jfif">
+<!-- icon 2 -->
+</div>
+
+<div class="icon">
+<img src="/assests/img/img_03.jfif">
+<!-- icon 3 -->
+</div>
+
+<div class="icon">
+<img src="/assests/img/img_04.jfif">
+<!-- icon 4 -->
+</div>
+
+<div class="icon">
+<img src="/assests/img/img_05.jfif">
+<!-- icon 5 -->
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="graffiti">
+
+<div class="container">
+
+<div class="top-bar">
+
+<div>
+PAINTER — DESIGNED BY Lowcii © 2026
+</div>
 
 
-        <!-- Hand + icons row -->
-        <section class="contact-quick">
-            <div class="arrow-down">
-                <img src="arrow_down.png" alt="mũi tên xuống">
-            </div>
-            <ul id="fast_contact" class="icon-list" aria-label="Liên hệ nhanh">
-                <!-- Gmail -->
-                <li>
-                    <a href="mailto:ducwatch5938@gmail.com" class="icon" aria-label="Gmail">
-                        <img src="gmail.png" alt="Gmail">
-                    </a>
-                </li>
+</div>
 
-                <!-- Phone -->
-                <li>
-                    <a href="#contact-section" class="icon" aria-label="Điện thoại">
-                        <img src="phone.png" alt="Phone">
-                    </a>
-                </li>
+<div class="card-grid">
 
-                <!-- Zalo -->
-                <li>
-                    <a href="https://zalo.me/0856926555" class="icon" aria-label="Zalo">
-                        <img src="zalo.png" alt="Zalo">
-                    </a>
-                </li>
+<div class="card">
+<img src="/assests/img/img_06.jfif" alt="">
+<h3>MEMORIES</h3>
+<div class="invite-form">
 
-                <!-- Facebook -->
-                <li>
-                    <a href="https://www.facebook.com/man.duc.2811" class="icon" aria-label="Facebook">
-                        <img src="facebook.png" alt="Facebook">
-                    </a>
-                </li>
-            </ul>
+<input type="text" id="nameInput" placeholder="Enter your name">
 
-        </section>
+<button onclick="openPopup1()">Open Invitation</button>
 
-        <!-- Headline + CTA -->
-        <section class="value-prop">
-            <h2 class="vp-title">
-                ĐẲNG CẤP CHÍNH HIỆU – GIÁ TRỊ TINH TẾ
-            </h2>
-            <p class="vp-sub">
-                Phiên bản 1:1 cao cấp – Độ hoàn thiện đạt 99% so với bản hãng.
-            </p>
+</div>
+</div>
 
-            <p class="vp-cta-hint">Tư vấn nhanh chóng qua link sau</p>
-            <div class="arrow-down">
-                <img src="arrow_down.png" alt="mũi tên xuống">
-            </div>
+<div class="card" onclick="openPopup('popup2')">
+<img src="/assests/img/img_04.jfif" alt="">
+<h3>JOURNEY</h3>
+</div>
 
-            <a href="https://zalo.me/0856926555" class="btn btn-primary">
-                <p>Nhận Tư Vấn Báo Giá</p>
-            </a>
-        </section>
+<div class="card" onclick="openPopup('popup3')">
+<img src="/assests/img/img_01.jfif" alt="">
+<h3>CELEBRATION</h3>
+</div>
 
-        <!-- Commitments -->
-        <section class="commitments">
-            <section class="service-commitment">
-                <div class="text_header_sc">
-                    <p>CAM KẾT DỊCH VỤ</p>
-                </div>
-                <ul class="commit-list">
-                    <li>Kiểm tra hàng trước khi thanh toán</li>
-                    <li>Bảo hành toàn quốc</li>
-                    <li>Hỗ trợ tư vấn 24/7</li>
-                    
-                </ul>
+</div>
 
-                <div class="commit-arrow">
-                    <img src="arrow_right.png" alt="arrow">
-                    <span>Vì sự an tâm của bạn là ưu tiên hàng đầu của chúng tôi.</span>
-                </div>
+<div class="footer-note">
+DESIGNED BY lowcii 2026
+</div>
 
-                <p class="hotline">
-                    <img src="hot-line.png" alt="Hotline icon">
-                    <span>Hotline: 0856.926.555</span>
-                </p>
+</div>
 
-            </section>
+</section>
+<!-- Popup 1 -->
+<div id="popup1" class="popup">
+<div class="popup-content">
 
-            <!-- Hình trưng bày -->
-            <figure class="showcase">
-                <img src="ảnh đồng hồ.jpg" alt="Bộ sưu tập đồng hồ trưng bày">
-            </figure>
-        </section>
+<span class="close" onclick="closePopup('popup1')">&times;</span>
 
-        <!-- Address & shipping -->
-        <section class="info-grid" aria-labelledby="contact-info">
-            <h3 id="contact-info" class="sr-only">Thông tin liên hệ và vận chuyển</h3>
+<h2>Graduation Invitation</h2>
+<p>Hi <span id="guestName"></span>!</p>
 
-            <div class="info-row">
-                <div class="info-item">
-                    <div class="info-icon">🏠</div>
-                    <div>
-                        <div class="info-label">Địa chỉ</div>
-                        <div class="info-text">123 Bồ Đề, Long Biên, Hà Nội</div>
-                    </div>
-                </div>
-            </div>
+<p>Cuối cùng thì ngày mà mình mong chờ bấy lâu cũng đã đến rồi! Sau bao nỗ lực, giấc mơ tốt nghiệp đã thành hiện thực, và mình thật sự rất vui khi được chia sẻ niềm hạnh phúc này cùng bạn.
+Mình trân trọng mời bạn đến dự Lễ tốt nghiệp của mình nhé!<br>
+Thời gian: Ngày 18 tháng 03 năm 2026 (thứ Tư)<br>
+Địa điểm: Trung tâm Hội nghị Quốc gia – Cổng số 1, Đại lộ Thăng Long, Phường Mễ Trì, Quận Nam Từ Liêm, TP. Hà Nội<br>
+Sự có mặt của bạn sẽ là nguồn động viên lớn lao và làm ngày đặc biệt này thêm trọn vẹn. Mình rất mong được gặp bạn để cùng ôn lại những kỷ niệm đẹp và chụp vài bức ảnh kỷ niệm nha!<br>
+Cảm ơn bạn vì đã luôn đồng hành. Hẹn gặp bạn tại buổi lễ nhé! ❤️<br>
+Thân mến,<br>
+(0392.097.532: "Nếu cần gì cứ nhắn mình nha!")<br>
+</p>
 
-            <div id="contact-section" class="info-block">
-                <h4 class="info-block__title">GIAO HÀNG TOÀN QUỐC</h4>
-                <div class="info-item">
-                    <div class="info-icon">📞</div>
-                    <div>
-                        <div class="info-label">Hotline</div>
-                        <div class="info-text"><a href="tel:0856926555">0856.926.555</a></div>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">✉️</div>
-                    <div>
-                        <div class="info-label">Email</div>
-                        <div class="info-text"><a href="mailto:ducwatch5938@gmail.com">ducwatch5938@gmail.com</a></div>
-                    </div>
-                </div>
-            </div>
+</div>
+</div>
 
-            <div class="policies">
-                <h4 class="info-block__title">CHÍNH SÁCH</h4>
-                <ul class="policy-list">
-                    <li><span class="info-icon">💳</span> Thanh toán khi nhận hàng</li>
-                    <li><span class="info-icon">🔒</span> Bảo mật thông tin</li>
-                    <li><span class="info-icon">✅</span> Cam kết chất lượng</li>
-                    <li><span class="info-icon">💬</span> Tư vấn miễn phí</li>
-                </ul>
-            </div>
-        </section>
 
-        <footer class="footer">
-            <small>© MẪN ĐỨC LUXURY • Watch &amp; Jewelry</small>
-        </footer>
-    </main>
+<!-- Popup 2 -->
+<div id="popup2" class="popup">
+<div class="popup-content">
 
-    <script src="app.js"></script>
+<span class="close" onclick="closePopup('popup2')">&times;</span>
+
+<h2>University Journey</h2>
+<p>
+A journey of learning, challenges, and achievements.
+</p>
+
+</div>
+</div>
+
+
+<!-- Popup 3 -->
+<div id="popup3" class="popup">
+<div class="popup-content">
+
+<span class="close" onclick="closePopup('popup3')">&times;</span>
+
+<h2>Graduation Celebration</h2>
+<p>
+Join us to celebrate the success of the graduating class.
+</p>
+
+</div>
+</div>
 </body>
+<script>
+    
+
+function openPopup1(){
+
+let name = document.getElementById("nameInput").value;
+
+if(name === ""){
+name = "Guest";
+}
+
+document.getElementById("guestName").textContent = name;
+
+document.getElementById("popup1").style.display = "flex";
+
+}
+
+
+function openPopup(id){
+document.getElementById(id).style.display="flex";
+}
+
+function closePopup(id){
+document.getElementById(id).style.display="none";
+}
+
+</script>
 
 </html>
